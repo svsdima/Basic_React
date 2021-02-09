@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const items = ['Выучить React', 'Создать крутое приложение'];
+
 /* Компонент списка дел */
 const TodoList = () => {
     return (
         <ul>
-            <li>Выучить React</li>
-            <li>Создать крутое приложение</li>
+            <li>{ items[0] }</li>
+            <li>{ items[1] }</li>
         </ul>
     );
 }
@@ -18,7 +20,14 @@ const AppHeader = () => {
 
 /* Компонент поиска */
 const SearchPanel = () => {
-    return <input placeholder="search" />
+    const searchText = "Введите текст для поиска",
+          searchStyle = {
+              fontSize: '15px'
+          }
+
+    return <input 
+    placeholder={searchText}
+    style={searchStyle} />
 }
 
 /* Компонент, который собирает другие компоненты в единое целое */
